@@ -13,6 +13,20 @@ body {
   background-color: #f5f7f5;
 }
 
+
+.sidebar-logo {
+  margin-bottom: 1em;      /* spacing below logo */
+  width: 100%;
+  display: flex;
+  justify-content: center;  /* center horizontally */
+}
+
+.sidebar-logo img {
+  max-width: 80%;          /* scale image to fit sidebar width */
+  height: auto;
+  border-radius: 50%;       /* optional: make it circular */
+}
+
 /* SIDEBAR */
 /* SIDEBAR */
 .sidebar {
@@ -148,12 +162,20 @@ body {
 
 <body>
 
+<!-- LEFT NAVIGATION -->
 <nav class="sidebar">
+  <!-- Logo -->
+  <div class="sidebar-logo">
+    <img src="Images/logo.png" alt="Logo" />
+  </div>
+
+  <!-- Links -->
   <a href="index.html">Home</a>
   <a href="projects.html">Projects</a>
   <a href="Resume.html">Resume</a>
   <a href="contact.html">Contact</a>
 </nav>
+
 
 <main class="content">
   <div class="projects-grid">
