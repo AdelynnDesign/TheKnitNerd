@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | My Portfolio</title>
+
+  <style>
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  font-family: Garamond;
+  background-color: #f5f7f5;
+}
+
+/* SIDEBAR */
+/* SIDEBAR */
+.sidebar {
+  width: 5em;
+  background: linear-gradient(to bottom, #69A46A, #4f7a4f); /* gradient background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5em;
+  
+  /* border and shadow */
+  border-right: 2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  
+  border-top-right-radius: 10px;    /* optional rounding */
+  border-bottom-right-radius: 10px; /* optional rounding */
+}
+
+
+/* SIDEBAR LINKS */
+.sidebar a {
+  color: #000000;                 /* lighter text for contrast */
+  text-decoration: none;
+  margin: 0.8em 0;                /* slightly less space between links */
+  font-size: 0.95em;              /* a bit larger */
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0;
+  border-radius: 8px;             /* rounded edges for links */
+  transition: all 0.3s ease;      /* smooth hover effect */
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* subtle highlight */
+  color: #ffffff;                              /* text changes on hover */
+  transform: translateX(3px);                  /* small slide effect */
+}
+
+/* RIGHT CONTENT */
+.content {
+  flex: 1;
+  padding: 2em;
+  display: flex;              /* enable flexbox */
+  justify-content: center;    /* horizontal centering */
+  align-items: center;        /* vertical centering */
+}
+
+/* CONTACT CARD */
+#contact {
+  background: #ffffff;
+  padding: 2.5em;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-top: 6px solid #69A46A;
+}
+
+
+    #contact h2 {
+      margin-top: 0;
+      margin-bottom: 1.5em;
+      text-align: center;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+      color: #2e3d2e;
+    }
+
+    /* FORM */
+    #contact form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #contact label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+      font-size: 0.9em;
+      color: #2e3d2e;
+    }
+
+    #contact input,
+    #contact textarea {
+      padding: 0.6em;
+      margin-top: 0.3em;
+      border: 1px solid #cdd8cd;
+      border-radius: 5px;
+      font-size: 0.9em;
+      font-family: inherit;
+      background-color: #f9fbf9;
+      transition: all 0.2s ease;
+    }
+
+    #contact input:focus,
+    #contact textarea:focus {
+      outline: none;
+      border-color: #69A46A;
+      background-color: #ffffff;
+    }
+
+    /* BUTTON */
+    #contact button {
+      margin-top: 1em;
+      padding: 0.75em;
+      background-color: #69A46A;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.95em;
+      letter-spacing: 0.05em;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    #contact button:hover {
+      background-color: #5b915c;
+      transform: translateY(-1px);
+    }
+
+    /* Responsive tweaks */
+    @media (max-height: 600px) {
+      .content {
+        align-items: flex-start;
+        padding-top: 2em;
+        padding-bottom: 2em;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- LEFT NAVIGATION -->
+  <nav class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="Resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <section id="contact">
+      <h2>Contact Me</h2>
+
+      <form action="https://formspree.io/f/mnjjqbar" method="POST">
+
+        <label>
+          First Name
+          <input type="text" name="first_name" required>
+        </label>
+
+        <label>
+          Last Name
+          <input type="text" name="last_name" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+
+        <label>
+          Phone Number
+          <input type="tel" name="phone">
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+
+        <button type="submit">Send Message</button>
+
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>

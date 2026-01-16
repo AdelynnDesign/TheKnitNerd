@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Projects | My Portfolio</title>
+
+<style>
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  font-family: Garamond;
+  background-color: #f5f7f5;
+}
+
+/* SIDEBAR */
+/* SIDEBAR */
+.sidebar {
+  width: 5em;
+  background: linear-gradient(to bottom, #69A46A, #4f7a4f); /* gradient background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5em;
+  
+  /* border and shadow */
+  border-right: 2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  
+  border-top-right-radius: 10px;    /* optional rounding */
+  border-bottom-right-radius: 10px; /* optional rounding */
+}
+
+
+/* SIDEBAR LINKS */
+.sidebar a {
+  color: #000000;                 /* lighter text for contrast */
+  text-decoration: none;
+  margin: 0.8em 0;                /* slightly less space between links */
+  font-size: 0.95em;              /* a bit larger */
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0;
+  border-radius: 8px;             /* rounded edges for links */
+  transition: all 0.3s ease;      /* smooth hover effect */
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* subtle highlight */
+  color: #ffffff;                              /* text changes on hover */
+  transform: translateX(3px);                  /* small slide effect */
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 2em;               /* slightly reduced padding for cleaner look */
+  overflow-y: auto;
+
+  /* optional border + shadow for separation */
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background-color: #ffffff;  /* pops against the sidebar */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* PROJECT GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+/* PROJECT CARD */
+.project-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  height: 300px;
+
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 0;
+  padding: 1em;
+  font-size: 1em;
+  text-align: center;
+}
+
+/* FULLSCREEN VIEWER */
+.viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.viewer img {
+  max-width: 85%;
+  max-height: 85%;
+}
+
+/* ARROWS */
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3em;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 0.3em;
+}
+
+.arrow.left { left: 1em; }
+.arrow.right { right: 1em; }
+
+.arrow:hover {
+  color: #69A46A;
+}
+
+/* CLOSE */
+.viewer-close {
+  position: absolute;
+  top: 1em;
+  right: 1.5em;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="sidebar">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="Resume.html">Resume</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main class="content">
+  <div class="projects-grid">
+
+    <!-- PROJECT CARD -->
+    <div class="project-card" onclick="openProject(0)">
+      <img src="Images/page1.png">
+      <h3>Project One</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject(1)">
+      <img src="Images/proj2page1.png">
+      <h3>Project Two</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject(2)">
+      <img src="Images/proj3page1.png">
+      <h3>Project Three</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject(3)">
+      <img src="Images/proj4page1.png">
+      <h3>Project Four</h3>
+    </div>
+
+  </div>
+</main>
+
+<div class="viewer" id="viewer">
+  <span class="viewer-close" onclick="closeViewer()">✕</span>
+  <span class="arrow left" onclick="prevImage()">❮</span>
+  <img id="viewerImage">
+  <span class="arrow right" onclick="nextImage()">❯</span>
+</div>
+
+<script>
+const projects = [
+  [
+    "Images/proj1page1.png",
+    "Images/proj1page2.png",
+    "Images/proj1page3.png",
+    "Images/proj1page4.png",
+    "Images/proj1page5.png",
+    "Images/proj1page6.png",
+    "Images/proj1page7.png",
+    "Images/proj1page8.png"
+  ],
+  [
+  "Images/proj2page1.png",
+  "Images/proj2page2.png",
+  "Images/proj2page3.png",
+  "Images/proj2page4.png",
+  "Images/proj2page5.png",
+  "Images/proj2page6.png"
+  ],
+
+  [
+  "Images/proj3page1.png",
+  "Images/proj3page2.png",
+  "Images/proj3page3.png"
+  ],
+  [
+  "Images/proj4page1.png",
+  "Images/proj4page2.png",
+  "Images/proj4page3.png",
+  "Images/proj4page4.png"
+  ]
+  
+];
+
+let currentProject = 0;
+let currentImage = 0;
+
+function openProject(index) {
+  currentProject = index;
+  currentImage = 0;
+  document.getElementById("viewer").style.display = "flex";
+  updateImage();
+}
+
+function closeViewer() {
+  document.getElementById("viewer").style.display = "none";
+}
+
+function updateImage() {
+  document.getElementById("viewerImage").src =
+    projects[currentProject][currentImage];
+}
+
+function nextImage() {
+  currentImage =
+    (currentImage + 1) % projects[currentProject].length;
+  updateImage();
+}
+
+function prevImage() {
+  currentImage =
+    (currentImage - 1 + projects[currentProject].length) %
+    projects[currentProject].length;
+  updateImage();
+}
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeViewer();
+});
+</script>
+
+</body>
+</html>
