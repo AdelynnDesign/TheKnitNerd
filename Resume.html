@@ -13,11 +13,9 @@ body {
   background-color: #f5f7f5;
 }
 
-/* SIDEBAR */
-/* SIDEBAR */
 .sidebar {
   width: 5em;
-  background: linear-gradient(to bottom, #69A46A, #4f7a4f); /* gradient background */
+  background: linear-gradient(to bottom, #69A46A, #4f7a4f); 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,57 +25,51 @@ body {
   border-right: 2px solid rgba(0, 0, 0, 0.2);
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   
-  border-top-right-radius: 10px;    /* optional rounding */
-  border-bottom-right-radius: 10px; /* optional rounding */
+  border-top-right-radius: 10px;    
+  border-bottom-right-radius: 10px; 
 }
 
 .sidebar-logo {
-  margin-bottom: 1em;      /* spacing below logo */
+  margin-bottom: 1em;      
   width: 100%;
   display: flex;
-  justify-content: center;  /* center horizontally */
+  justify-content: center;  
 }
 
 .sidebar-logo img {
-  max-width: 80%;          /* scale image to fit sidebar width */
+  max-width: 80%;         
   height: auto;
-  border-radius: 50%;       /* optional: make it circular */
+  border-radius: 50%;       
 }
 
-
-
-/* SIDEBAR LINKS */
 .sidebar a {
-  color: #000000;                 /* lighter text for contrast */
+  color: #000000;                
   text-decoration: none;
-  margin: 0.8em 0;                /* slightly less space between links */
-  font-size: 0.95em;              /* a bit larger */
+  margin: 0.8em 0;                
+  font-size: 0.95em;             
   width: 100%;
   text-align: center;
   padding: 0.5em 0;
-  border-radius: 8px;             /* rounded edges for links */
-  transition: all 0.3s ease;      /* smooth hover effect */
+  border-radius: 8px;             
+  transition: all 0.3s ease;      
 }
 
 .sidebar a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* subtle highlight */
-  color: #ffffff;                              /* text changes on hover */
-  transform: translateX(3px);                  /* small slide effect */
+  background-color: rgba(255, 255, 255, 0.2); 
+  color: #ffffff;                              
+  transform: translateX(3px);                  
 }
 
-/* CONTENT */
 .content {
   flex: 1;
-  padding: 2em;               /* slightly reduced padding for cleaner look */
+  padding: 2em;               
   overflow-y: auto;
 
-  /* optional border + shadow for separation */
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 10px;
-  background-color: #ffffff;  /* pops against the sidebar */
+  background-color: #ffffff;  
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
-    /* RESUME IMAGE */
     .resume-container {
       display: flex;
       justify-content: flex-start;
@@ -88,7 +80,7 @@ body {
   max-width: 85%;
   height: auto;
   display: block;
-  margin-left: 5em;   /* shift right */
+  margin-left: 5em;   
 }
 
 
@@ -97,14 +89,11 @@ body {
 
 <body>
 
-<!-- LEFT NAVIGATION -->
 <nav class="sidebar">
-  <!-- Logo -->
   <div class="sidebar-logo">
     <img src="Images/Logo.png" alt="Logo" />
   </div>
 
-  <!-- Links -->
   <a href="index.html">Home</a>
   <a href="projects.html">Projects</a>
   <a href="Resume.html">Resume</a>
@@ -112,7 +101,6 @@ body {
 </nav>
 
 
-  <!-- MAIN CONTENT -->
   <main class="content">
     <div class="resume-container">
       <img src="Images/resume.jpeg" alt="Resume">

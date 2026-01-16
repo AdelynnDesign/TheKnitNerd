@@ -5,7 +5,7 @@
   <title>Contact | My Portfolio</title>
 
   <style>
-/* BODY */
+
 body {
   margin: 0;
   display: flex;
@@ -15,20 +15,19 @@ body {
 }
 
 .sidebar-logo {
-  margin-bottom: 1em;      /* spacing below logo */
+  margin-bottom: 1em;      
   width: 100%;
   display: flex;
-  justify-content: center;  /* center horizontally */
+  justify-content: center;  
 }
 
 .sidebar-logo img {
-  max-width: 80%;          /* scale image to fit sidebar width */
+  max-width: 80%;         
   height: auto;
-  border-radius: 50%;       /* optional: make it circular */
+  border-radius: 50%;       
 }
 
 
-/* SIDEBAR */
 .sidebar {
   width: 5em;
   background: linear-gradient(to bottom, #69A46A, #4f7a4f);
@@ -60,15 +59,14 @@ body {
   transform: translateX(3px);
 }
 
-/* CONTENT */
 .content {
   flex: 1;
   padding: 2em;
   display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: flex-start; /* top align */
-  gap: 2em; /* space between columns */
-  flex-wrap: wrap; /* wrap on smaller screens */
+  justify-content: center; 
+  align-items: flex-start; 
+  gap: 2em; 
+  flex-wrap: wrap; 
 }
 
 .contact-image {
@@ -76,10 +74,9 @@ body {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;       /* vertically center the image */
+  align-items: center;       
 }
 
-/* CONTACT FORM CARD */
 #contact {
   background: #ffffff;
   padding: 2.5em;
@@ -90,7 +87,6 @@ body {
   border-top: 6px solid #69A46A;
 }
 
-/* CONTACT FORM HEADER */
 #contact h2 {
   margin-top: 0;
   margin-bottom: 1.5em;
@@ -100,7 +96,6 @@ body {
   color: #2e3d2e;
 }
 
-/* FORM FIELDS */
 #contact form {
   display: flex;
   flex-direction: column;
@@ -133,7 +128,6 @@ body {
   background-color: #ffffff;
 }
 
-/* SUBMIT BUTTON */
 #contact button {
   margin-top: 1em;
   padding: 0.75em;
@@ -152,7 +146,6 @@ body {
   transform: translateY(-1px);
 }
 
-/* IMAGE NEXT TO CONTACT FORM */
 .contact-image {
   max-width: 400px;
   flex: 1;
@@ -168,7 +161,6 @@ body {
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .content {
     flex-direction: column;
@@ -184,14 +176,11 @@ body {
 
 <body>
 
-<!-- LEFT NAVIGATION -->
 <nav class="sidebar">
-  <!-- Logo -->
   <div class="sidebar-logo">
     <img src="Images/Logo.png" alt="Logo" />
   </div>
 
-  <!-- Links -->
   <a href="index.html">Home</a>
   <a href="projects.html">Projects</a>
   <a href="Resume.html">Resume</a>
@@ -199,10 +188,8 @@ body {
 </nav>
 
 
-  <!-- MAIN CONTENT -->
   <main class="content">
 
-    <!-- CONTACT FORM -->
     <section id="contact">
       <h2>Contact Me</h2>
       <form action="https://formspree.io/f/mnjjqbar" method="POST">
@@ -236,7 +223,6 @@ body {
       </form>
     </section>
 
-    <!-- IMAGE NEXT TO FORM -->
     <div class="contact-image" style="margin-top: 5em;">
       <img src="Images/QR.png" alt="Contact Image">
     </div>

@@ -15,77 +15,70 @@ body {
 
 
 .sidebar-logo {
-  margin-bottom: 1em;      /* spacing below logo */
+  margin-bottom: 1em;      
   width: 100%;
   display: flex;
-  justify-content: center;  /* center horizontally */
+  justify-content: center;  
 }
 
 .sidebar-logo img {
-  max-width: 80%;          /* scale image to fit sidebar width */
+  max-width: 80%;          
   height: auto;
-  border-radius: 50%;       /* optional: make it circular */
+  border-radius: 50%;       
 }
 
-/* SIDEBAR */
-/* SIDEBAR */
+
 .sidebar {
   width: 5em;
-  background: linear-gradient(to bottom, #69A46A, #4f7a4f); /* gradient background */
+  background: linear-gradient(to bottom, #69A46A, #4f7a4f); 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 1.5em;
   
-  /* border and shadow */
   border-right: 2px solid rgba(0, 0, 0, 0.2);
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   
-  border-top-right-radius: 10px;    /* optional rounding */
-  border-bottom-right-radius: 10px; /* optional rounding */
+  border-top-right-radius: 10px;    
+  border-bottom-right-radius: 10px; 
 }
 
 
-/* SIDEBAR LINKS */
 .sidebar a {
-  color: #000000;                 /* lighter text for contrast */
+  color: #000000;                 
   text-decoration: none;
-  margin: 0.8em 0;                /* slightly less space between links */
-  font-size: 0.95em;              /* a bit larger */
+  margin: 0.8em 0;                
+  font-size: 0.95em;             
   width: 100%;
   text-align: center;
   padding: 0.5em 0;
-  border-radius: 8px;             /* rounded edges for links */
-  transition: all 0.3s ease;      /* smooth hover effect */
+  border-radius: 8px;             
+  transition: all 0.3s ease;      
 }
 
 .sidebar a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* subtle highlight */
-  color: #ffffff;                              /* text changes on hover */
-  transform: translateX(3px);                  /* small slide effect */
+  background-color: rgba(255, 255, 255, 0.2); 
+  color: #ffffff;                              
+  transform: translateX(3px);                 
 }
 
-/* CONTENT */
 .content {
   flex: 1;
-  padding: 2em;               /* slightly reduced padding for cleaner look */
+  padding: 2em;              
   overflow-y: auto;
 
-  /* optional border + shadow for separation */
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 10px;
-  background-color: #ffffff;  /* pops against the sidebar */
+  background-color: #ffffff;  
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* PROJECT GRID */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2em;
 }
 
-/* PROJECT CARD */
 .project-card {
   background: white;
   border-radius: 10px;
@@ -114,7 +107,6 @@ body {
   text-align: center;
 }
 
-/* FULLSCREEN VIEWER */
 .viewer {
   position: fixed;
   inset: 0;
@@ -130,7 +122,6 @@ body {
   max-height: 85%;
 }
 
-/* ARROWS */
 .arrow {
   position: absolute;
   top: 50%;
@@ -148,7 +139,6 @@ body {
   color: #69A46A;
 }
 
-/* CLOSE */
 .viewer-close {
   position: absolute;
   top: 1em;
@@ -162,14 +152,11 @@ body {
 
 <body>
 
-<!-- LEFT NAVIGATION -->
 <nav class="sidebar">
-  <!-- Logo -->
   <div class="sidebar-logo">
     <img src="Images/Logo.png" alt="Logo" />
   </div>
 
-  <!-- Links -->
   <a href="index.html">Home</a>
   <a href="projects.html">Projects</a>
   <a href="Resume.html">Resume</a>
@@ -180,25 +167,24 @@ body {
 <main class="content">
   <div class="projects-grid">
 
-    <!-- PROJECT CARD -->
     <div class="project-card" onclick="openProject(0)">
       <img src="Images/page1.png">
-      <h3>Project One</h3>
+      <h3>Zankov</h3>
     </div>
 
     <div class="project-card" onclick="openProject(1)">
       <img src="Images/proj2page1.png">
-      <h3>Project Two</h3>
+      <h3>Don't Stray</h3>
     </div>
 
     <div class="project-card" onclick="openProject(2)">
       <img src="Images/proj3page1.png">
-      <h3>Project Three</h3>
+      <h3>Plumeria</h3>
     </div>
 
     <div class="project-card" onclick="openProject(3)">
       <img src="Images/proj4page1.png">
-      <h3>Project Four</h3>
+      <h3>Austria</h3>
     </div>
 
   </div>
@@ -214,10 +200,10 @@ body {
 <script>
 const projects = [
   [
-    "Images/proj1page1.png",
-    "Images/proj1page2.png",
     "Images/proj1page3.png",
     "Images/proj1page4.png",
+    "Images/proj1page1.png",
+    "Images/proj1page2.png",
     "Images/proj1page5.png",
     "Images/proj1page6.png",
     "Images/proj1page7.png",
