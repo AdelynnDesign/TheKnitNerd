@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | My Portfolio</title>
+  <link rel="icon" type="image/png" href="Images/Logo2.png">
+
+
+  <style>
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  font-family: Garamond;
+  background-color: #f5f7f5;
+}
+
+.sidebar-logo {
+  margin-bottom: 1em;      
+  width: 100%;
+  display: flex;
+  justify-content: center;  
+}
+
+.sidebar-logo img {
+  max-width: 80%;         
+  height: auto;
+  border-radius: 50%;       
+}
+
+
+.sidebar {
+  width: 6em;
+  background: linear-gradient(to bottom, #69A46A, #4f7a4f);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5em;
+  border-right: 2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.sidebar a {
+  color: #000000;
+  text-decoration: none;
+  margin: 0.8em 0;
+  font-size: 1.1em;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+.content {
+  flex: 1;
+  padding: 2em;
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start; 
+  gap: 2em; 
+  flex-wrap: wrap; 
+}
+.image-box,
+.about-box {
+  background: linear-gradient(to bottom, #69A46A, #4f7a4f);
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.About {
+  max-width: 500px;
+  background-color: white;
+  padding: 1.5em;
+  border-radius: 12px;
+}
+
+.About h1 {
+  margin-top: 0;
+  color: #4f7a4f;
+}
+
+.About p {
+  line-height: 1.6;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <img src="Images/Logo.png" alt="Logo" />
+  </div>
+
+  <a href="index.html">Home</a>
+  <a href="projects.html">Collections</a>
+  <a href="Resume.html">Resume</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+
+</nav>
+
+
+<main class="content">
+
+    <div class="image-box">
+      <div class="about-image">
+        <img src="Images/aboutme.png" alt="About Me Photo">
+      </div>
+    </div>
+  
+    <div class="about-box">
+      <div class="About">
+        <h1>About Me</h1>
+        <p>
+            My name is Adelynn, and I grew up in Texas. I am focused on knit design, digital knit programming, and hand flat machines. I love creating texture and design through various gauge knits.
+        </p>
+  
+        <p>
+            I am a collaborative team player experienced in both customer service 
+            and workroom management. I am a skilled multitasker, eager to learn new 
+            proficiencies, punctual, and a self-motivated employee who completes 
+            tasks efficiently without supervision.
+        </p>
+      </div>
+    </div>
+  
+  </main>
+  
+  
+  
+
+</body>
+</html>

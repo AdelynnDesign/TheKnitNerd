@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Home | My Portfolio</title>
+  <link rel="icon" type="image/png" href="Images/Logo2.png">
+
 
   <style>
 body {
@@ -13,7 +15,6 @@ body {
   background-color: #f5f7f5;
 }
 
-/* ---------- SIDEBAR ---------- */
 
 .sidebar-logo {
   margin-bottom: 1em;
@@ -59,7 +60,6 @@ body {
   transform: translateX(3px);
 }
 
-/* ---------- CONTENT ---------- */
 
 .content {
   flex: 1;
@@ -71,7 +71,6 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* ---------- GALLERY ---------- */
 
 .display {
   display: grid;
@@ -84,72 +83,62 @@ body {
 .display img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* no distortion */
+  object-fit: cover; 
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* -------- FEATURED SIZES -------- */
 
-/* Big anchor image */
 .featured {
   grid-column: span 2;
   grid-row: span 2;
 }
 
-/* Wide image */
 .wide {
   grid-column: span 2;
 }
 
-/* Tall image */
 .tall {
   grid-row: span 2.5;
 }
 
-/* Natural aspect (no crop) */
 .natural {
   object-fit: contain;
 }
 
 
-/* ---------- SIZE VARIANTS ---------- */
 
-/* Wide emphasis images */
 .wide {
   grid-column: span 2;
 }
 
-/* Extra wide hero images */
 .extra-wide {
   grid-column: span 3;
 }
 
-/* Natural-size images (no distortion) */
 .natural {
   height: auto;
   object-fit: contain;
 }
 
-/* Natural + wide */
 .natural.wide {
   grid-column: span 2;
 }
 
 
 .tall {
-  grid-row: span 3;   /* 2x height */
+  grid-row: span 3;   
   grid-column: span 2;
 }
 
 .extra-tall {
-  grid-row: span 3;   /* 3x height */
+  grid-row: span 3;   
   grid-column: span 2;
 }
 
 .wide {
-  grid-column: span 2; /* optional: wider images */
+  grid-column: span 2; 
 }
 
   </style>
@@ -165,24 +154,18 @@ body {
   <a href="projects.html">Collections</a>
   <a href="Resume.html">Resume</a>
   <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+
 </nav>
 
 <main class="content">
   <div class="display">
 
-    <!-- Large focal images -->
     <img src="HomePhotos/1.jpg" class="featured">
     <img src="HomePhotos/28.jpg" class="tall">
-
     <img src="HomePhotos/21.jpg" class="wide">
-
-
-    <!-- Natural aspect images -->
     <img src="HomePhotos/5.jpg" class="featured">
     <img src="HomePhotos/2.jpeg" class="wide">
-
-
-    <!-- Standard grid images -->
     <img src="HomePhotos/7.jpg" class="tall">
     <img src="HomePhotos/18.jpg" class="featured">
     <img src="HomePhotos/14.jpg"class="tall">
@@ -190,22 +173,12 @@ body {
     <img src="HomePhotos/23.jpg" class="natural">
     <img src="HomePhotos/24.jpg" class="natural">
     <img src="HomePhotos/25.jpg" class="natural">
-
-
-
-
-    <!-- More natural / wide mix -->
     <img src="HomePhotos/10.jpg" class="tall">
     <img src="HomePhotos/11.jpg" class="natural">
     <img src="HomePhotos/12.jpg" class="tall">
     <img src="HomePhotos/13.jpg" class="tall">
-
-
-
-    <!-- Finish strong -->
     <img src="HomePhotos/8.jpg" class="tall">
     <img src="HomePhotos/16.jpg" class="tall">
-
     <img src="HomePhotos/17.jpg" class="featured">
     <img src="HomePhotos/27.jpg" class="featured">
     <img src="HomePhotos/29.jpg" class="wide">
