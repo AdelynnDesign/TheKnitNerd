@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Resume | My Portfolio</title>
   <link rel="icon" type="image/png" href="Images/Logo2.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
   <style>
@@ -83,7 +84,65 @@ body {
   display: block;
   margin-left: 5em;   
 }
+@media only screen and (max-width: 600px) {
 
+body {
+  flex-direction: column;
+  height: auto;
+}
+
+.sidebar {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.5em 0;
+  border-right: none;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  border-radius: 0 0 10px 10px;
+}
+
+.sidebar-logo {
+  margin: 0;
+  width: auto;
+}
+
+.sidebar-logo img {
+  max-width: 50px;
+}
+
+.sidebar a {
+  margin: 0;
+  font-size: 0.85em;
+  padding: 0.5em 0.2em;
+}
+
+.content {
+  padding: 1em;
+  border-radius: 0;
+  margin-top: 0.5em;
+}
+
+.display {
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-auto-rows: 120px;
+  gap: 0.5em;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Collapse large images to single cell on mobile */
+.featured, .wide, .tall, .extra-tall, .extra-wide {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Keep natural images natural */
+.natural {
+  object-fit: contain;
+  height: auto;
+  padding: 0.2em;
+}
+}
 
   </style>
 </head>
