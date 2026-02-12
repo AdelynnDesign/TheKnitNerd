@@ -6,7 +6,6 @@
   <link rel="icon" type="image/png" href="Images/Logo2.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
   <style>
 
 body {
@@ -17,6 +16,7 @@ body {
   background-color: #f5f7f5;
 }
 
+/* Sidebar */
 .sidebar-logo {
   margin-bottom: 1em;      
   width: 100%;
@@ -29,7 +29,6 @@ body {
   height: auto;
   border-radius: 50%;       
 }
-
 
 .sidebar {
   width: 6em;
@@ -62,6 +61,7 @@ body {
   transform: translateX(3px);
 }
 
+/* Content */
 .content {
   flex: 1;
   padding: 2em;
@@ -72,17 +72,10 @@ body {
   flex-wrap: wrap; 
 }
 
-.contact-image {
-  max-width: 400px;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;       
-}
-
+/* Contact Form */
 #contact {
   background: #ffffff;
-  padding: 2.5em;
+  padding: 2em;
   max-width: 480px;
   width: 100%;
   border-radius: 10px;
@@ -149,90 +142,84 @@ body {
   transform: translateY(-1px);
 }
 
-.contact-image {
-  max-width: 400px;
-  flex: 1;
+/* QR Box */
+.qr-box {
+  background: linear-gradient(to bottom, #69A46A, #4f7a4f);
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 480px; /* match contact form width */
+  width: 100%;
+  margin-top: 2em;
 }
 
-.contact-image img {
-  max-width: 100%;
+.qr-box img {
+  width: 100%;  /* fill the container */
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
 }
 
+/* Responsive adjustments */
 @media (max-width: 900px) {
   .content {
     flex-direction: column;
     align-items: center;
   }
-
-  .contact-image {
-    margin-top: 2em;
-  }
 }
+
 @media only screen and (max-width: 600px) {
 
-body {
-  flex-direction: column;
-  height: auto;
+  body {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5em 0;
+    border-right: none;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    border-radius: 0 0 10px 10px;
+  }
+
+  .sidebar-logo {
+    margin: 0;
+    width: auto;
+  }
+
+  .sidebar-logo img {
+    max-width: 50px;
+  }
+
+  .sidebar a {
+    margin: 0;
+    font-size: 0.85em;
+    padding: 0.5em 0.2em;
+  }
+
+  .content {
+    padding: 1em;
+    border-radius: 0;
+    margin-top: 0.5em;
+  }
+
+  #contact {
+    padding: 1.5em;
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .qr-box {
+    max-width: 90%;
+    padding: 1.5em;
+  }
 }
 
-.sidebar {
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 0.5em 0;
-  border-right: none;
-  border-bottom: 2px solid rgba(0,0,0,0.2);
-  border-radius: 0 0 10px 10px;
-}
-
-.sidebar-logo {
-  margin: 0;
-  width: auto;
-}
-
-.sidebar-logo img {
-  max-width: 50px;
-}
-
-.sidebar a {
-  margin: 0;
-  font-size: 0.85em;
-  padding: 0.5em 0.2em;
-}
-
-.content {
-  padding: 1em;
-  border-radius: 0;
-  margin-top: 0.5em;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Contact form adjustments for mobile */
-#contact {
-  max-width: 75%;      /* narrower form */
-  width: 100%;
-  padding: 1.5em;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-}
-
-.contact-image {
-  margin-top: 2em;
-  max-width: 200px;    /* smaller image on mobile */
-}
-
-.contact-image img {
-  width: 100%;
-  height: auto;
-}
-}
   </style>
 </head>
 
@@ -251,48 +238,48 @@ body {
 
 </nav>
 
+<main class="content">
 
-  <main class="content">
+  <!-- Contact Form -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mnjjqbar" method="POST">
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/mnjjqbar" method="POST">
+      <label>
+        First Name
+        <input type="text" name="first_name" required>
+      </label>
 
-        <label>
-          First Name
-          <input type="text" name="first_name" required>
-        </label>
+      <label>
+        Last Name
+        <input type="text" name="last_name" required>
+      </label>
 
-        <label>
-          Last Name
-          <input type="text" name="last_name" required>
-        </label>
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
 
-        <label>
-          Email
-          <input type="email" name="email" required>
-        </label>
+      <label>
+        Phone Number
+        <input type="tel" name="phone">
+      </label>
 
-        <label>
-          Phone Number
-          <input type="tel" name="phone">
-        </label>
+      <label>
+        Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
 
-        <label>
-          Message
-          <textarea name="message" rows="5" required></textarea>
-        </label>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
+  <!-- QR Code -->
+  <div class="qr-box">
+    <img src="Images/QR.png" alt="Contact QR">
+  </div>
 
-    <div class="contact-image" style="margin-top: 5em;">
-      <img src="Images/QR.png" alt="Contact Image">
-    </div>
-    
-
-  </main>
+</main>
 
 </body>
 </html>
