@@ -93,40 +93,42 @@ body {
 /* ===== MOBILE FIXED HEADER ===== */
 @media only screen and (max-width: 600px) {
 
-  body {
-    flex-direction: column;
-  }
+body {
+  flex-direction: column;
+  background-color: #ffffff;  /* white top */
+}
 
-  .sidebar {
-    position: fixed;       /* lock it */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0;
-    border-right: none;
-    border-bottom: 2px solid rgba(0,0,0,0.2);
-    border-radius: 0;
-    z-index: 1000;         /* stay above content */
-  }
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  border-right: none;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  border-radius: 0;
+  z-index: 1000;
+}
 
-  .sidebar-logo img {
-    max-width: 40px;
-  }
+.sidebar-logo img {
+  max-width: 40px;
+}
 
-  .sidebar a {
-    font-size: 0.8em;
-    padding: 0;
-    margin: 0;
-  }
+.sidebar a {
+  font-size: 0.8em;
+  padding: 0;
+  margin: 0;
+}
 
-  /* Push content down so it doesn't hide under fixed header */
-  .content {
-    padding: 1em;
-  }
+.content {
+  padding: 1em;
+  margin-top: 60px;   /* prevent overlap */
+}
+
 }
   </style>
 </head>
