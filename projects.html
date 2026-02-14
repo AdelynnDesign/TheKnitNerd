@@ -5,27 +5,22 @@
 <title>Projects | My Portfolio</title>
 <link rel="icon" type="image/png" href="Images/Logo2.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+
+:root {
+    --mobile-header-height: 60px;
+}
+
 body {
     margin: 0;
     display: flex;
-    height: 100vh;
+    min-height: 100vh; /* FIXED */
     font-family: Garamond;
     background-color: #f5f7f5;
 }
 
 /* Sidebar */
-.sidebar-logo {
-    margin-bottom: 1em;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.sidebar-logo img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 50%;
-}
 .sidebar {
     width: 6em;
     background: linear-gradient(to bottom, #69A46A, #4f7a4f);
@@ -37,7 +32,22 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    flex-shrink: 0;
 }
+
+.sidebar-logo {
+    margin-bottom: 1em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-logo img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 50%;
+}
+
 .sidebar a {
     color: #000000;
     text-decoration: none;
@@ -49,6 +59,7 @@ body {
     border-radius: 8px;
     transition: all 0.3s ease;
 }
+
 .sidebar a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #ffffff;
@@ -60,20 +71,17 @@ body {
     flex: 1;
     padding: 2em;
     overflow-y: auto;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 10px;
     background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* Bigger Project Grid */
+/* Projects Grid */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 2.5em;
 }
 
-/* Bigger Cards */
+/* Project Cards */
 .project-card {
     background: white;
     border-radius: 14px;
@@ -81,20 +89,24 @@ body {
     cursor: pointer;
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    height: 420px;
+    display: flex;
+    flex-direction: column;
 }
+
 .project-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 28px rgba(0,0,0,0.15);
 }
+
 .project-card img {
     width: 100%;
-    height: 360px;
-    object-fit: cover;
+    height: auto; /* NO CROPPING */
+    display: block;
 }
+
 .project-card h3 {
     margin: 0;
-    padding: 0.9em;
+    padding: 1em;
     font-size: 1.1em;
     text-align: center;
 }
@@ -109,12 +121,8 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 2000;
-    animation: fadeIn 0.3s ease;
 }
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+
 .viewer img {
     max-width: 90%;
     max-height: 90%;
@@ -130,11 +138,17 @@ body {
     cursor: pointer;
     user-select: none;
     padding: 0 0.3em;
+    transform: translateY(-50%);
     transition: color 0.2s ease, transform 0.2s ease;
 }
+
 .arrow.left { left: 1em; }
 .arrow.right { right: 1em; }
-.arrow:hover { color: #69A46A; transform: scale(1.1); }
+
+.arrow:hover {
+    color: #69A46A;
+    transform: translateY(-50%) scale(1.1);
+}
 
 .viewer-close {
     position: absolute;
@@ -143,64 +157,63 @@ body {
     font-size: 2em;
     color: #cccccc;
     cursor: pointer;
-    transition: color 0.2s ease;
 }
-.viewer-close:hover { color: #69A46A; }
 
-/* ===== MOBILE FIXED SIDEBAR ===== */
+.viewer-close:hover {
+    color: #69A46A;
+}
+
+/* ===== MOBILE FIX ===== */
 @media only screen and (max-width: 600px) {
 
-body { 
-    flex-direction: column; 
-    height: auto;
-    background-color: #ffffff;
-}
+    body {
+        flex-direction: column;
+        background-color: #ffffff;
+    }
 
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0;
-    border-right: none;
-    border-bottom: 2px solid rgba(0,0,0,0.2);
-    border-radius: 0;
-    z-index: 1000;
-}
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--mobile-header-height);
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0;
+        border-right: none;
+        border-bottom: 2px solid rgba(0,0,0,0.2);
+        border-radius: 0;
+        z-index: 1000;
+    }
 
-.sidebar-logo { margin: 0; width: auto; }
-.sidebar-logo img { max-width: 40px; }
-.sidebar a { 
-    margin: 0; 
-    font-size: 0.8em; 
-    padding: 0;
-}
+    .sidebar-logo { margin: 0; width: auto; }
+    .sidebar-logo img { max-width: 40px; }
 
-.content { 
-    padding: 1em; 
-    border-radius: 0; 
-    margin-top: 60px;   /* prevents overlap */
-}
+    .sidebar a {
+        margin: 0;
+        font-size: 0.8em;
+        padding: 0;
+    }
 
-.projects-grid { 
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-    gap: 1.5em; 
-}
+    .content {
+        margin-top: var(--mobile-header-height);
+        padding: 1em;
+    }
 
-.project-card { height: 320px; }
-.project-card img { height: 260px; }
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5em;
+    }
 
-.viewer .arrow {
-    top: 10%;
-    font-size: 3.5em;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-}
+    .viewer .arrow {
+        top: 15%;
+        font-size: 3em;
+    }
 
-.viewer img { max-height: 70%; }
+    .viewer img {
+        max-height: 75%;
+    }
 }
 
 </style>
