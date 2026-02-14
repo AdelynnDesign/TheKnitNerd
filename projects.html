@@ -150,57 +150,59 @@ body {
 /* ===== MOBILE FIXED SIDEBAR ===== */
 @media only screen and (max-width: 600px) {
 
-    body { 
-        flex-direction: column; 
-        height: auto;
-    }
-
-    .sidebar {
-        position: fixed;       /* LOCK IT */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0;
-        border-right: none;
-        border-bottom: 2px solid rgba(0,0,0,0.2);
-        border-radius: 0;
-        z-index: 1000;
-    }
-
-    .sidebar-logo { margin: 0; width: auto; }
-    .sidebar-logo img { max-width: 40px; }
-    .sidebar a { 
-        margin: 0; 
-        font-size: 0.8em; 
-        padding: 0;
-    }
-
-    /* Push content down */
-    .content { 
-        padding: 1em; 
-        border-radius: 0; 
-    }
-
-    .projects-grid { 
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-        gap: 1.5em; 
-    }
-
-    .project-card { height: 320px; }
-    .project-card img { height: 260px; }
-
-    /* Viewer arrows above image on mobile */
-    .viewer .arrow {
-        top: 10%;
-        font-size: 3.5em;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-    }
-    .viewer img { max-height: 70%; }
+body { 
+    flex-direction: column; 
+    height: auto;
+    background-color: #ffffff;
 }
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    border-right: none;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    border-radius: 0;
+    z-index: 1000;
+}
+
+.sidebar-logo { margin: 0; width: auto; }
+.sidebar-logo img { max-width: 40px; }
+.sidebar a { 
+    margin: 0; 
+    font-size: 0.8em; 
+    padding: 0;
+}
+
+.content { 
+    padding: 1em; 
+    border-radius: 0; 
+    margin-top: 60px;   /* prevents overlap */
+}
+
+.projects-grid { 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 1.5em; 
+}
+
+.project-card { height: 320px; }
+.project-card img { height: 260px; }
+
+.viewer .arrow {
+    top: 10%;
+    font-size: 3.5em;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+.viewer img { max-height: 70%; }
+}
+
 </style>
 </head>
 <body>
