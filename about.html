@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact | My Portfolio</title>
+  <title>About | My Portfolio</title>
   <link rel="icon" type="image/png" href="Images/Logo2.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
   <style>
+:root {
+  --mobile-header-height: 60px;
+}
 
 body {
   margin: 0;
@@ -15,6 +17,21 @@ body {
   min-height: 100vh;
   font-family: Garamond;
   background-color: #f5f7f5;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 6em;
+  background: linear-gradient(to bottom, #69A46A, #4f7a4f);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5em;
+  border-right: 2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  flex-shrink: 0;
 }
 
 .sidebar-logo {
@@ -30,38 +47,25 @@ body {
   border-radius: 50%;       
 }
 
-
-.sidebar {
-  width: 6em;
-  background: linear-gradient(to bottom, #69A46A, #4f7a4f);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 1.5em;
-  border-right: 2px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
 .sidebar a {
-  color: #000000;
+  color: #000000;                
   text-decoration: none;
-  margin: 0.8em 0;
+  margin: 0.8em 0;                
   font-size: 1.1em;
   width: 100%;
   text-align: center;
   padding: 0.5em 0;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border-radius: 8px;             
+  transition: all 0.3s ease;      
 }
 
 .sidebar a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  transform: translateX(3px);
+  background-color: rgba(255, 255, 255, 0.2); 
+  color: #ffffff;                              
+  transform: translateX(3px);                  
 }
 
+/* Content */
 .content {
   flex: 1;
   padding: 2em;
@@ -71,6 +75,8 @@ body {
   gap: 2em; 
   flex-wrap: wrap; 
 }
+
+/* Boxes */
 .image-box,
 .about-box {
   background: linear-gradient(to bottom, #69A46A, #4f7a4f);
@@ -103,67 +109,53 @@ body {
 .About p {
   line-height: 1.6;
 }
+
+/* ===== MOBILE FIXED SIDEBAR ===== */
 @media only screen and (max-width: 600px) {
 
-body {
-  flex-direction: column;
-  height: auto;
-}
+  body {
+    flex-direction: column;
+    height: auto;
+    background-color: #ffffff;
+  }
 
-.sidebar {
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 0.5em 0;
-  border-right: none;
-  border-bottom: 2px solid rgba(0,0,0,0.2);
-  border-radius: 0 0 10px 10px;
-}
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--mobile-header-height);
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em 0;
+    border-right: none;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    border-radius: 0;
+    z-index: 1000;
+  }
 
-.sidebar-logo {
-  margin: 0;
-  width: auto;
-}
+  .sidebar-logo { margin: 0; width: auto; }
+  .sidebar-logo img { max-width: 50px; }
 
-.sidebar-logo img {
-  max-width: 50px;
-}
+  .sidebar a {
+    margin: 0;
+    font-size: 0.85em;
+    padding: 0.5em 0.2em;
+  }
 
-.sidebar a {
-  margin: 0;
-  font-size: 0.85em;
-  padding: 0.5em 0.2em;
-}
+  .content {
+    padding: 1em;
+    margin-top: var(--mobile-header-height); /* push content down */
+    border-radius: 0;
+  }
 
-.content {
-  padding: 1em;
-  border-radius: 0;
-  margin-top: 0.5em;
+  .image-box,
+  .about-box {
+    max-width: 90%;
+    padding: 1.5em;
+  }
 }
-
-.display {
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  grid-auto-rows: 120px;
-  gap: 0.5em;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-/* Collapse large images to single cell on mobile */
-.featured, .wide, .tall, .extra-tall, .extra-wide {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-/* Keep natural images natural */
-.natural {
-  object-fit: contain;
-  height: auto;
-  padding: 0.2em;
-}
-}
-
-
   </style>
 </head>
 
@@ -179,38 +171,33 @@ body {
   <a href="Resume.html">Resume</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
-
 </nav>
-
 
 <main class="content">
 
-    <div class="image-box">
-      <div class="about-image">
-        <img src="Images/aboutme.png" alt="About Me Photo">
-      </div>
+  <div class="image-box">
+    <div class="about-image">
+      <img src="Images/aboutme.png" alt="About Me Photo">
     </div>
-  
-    <div class="about-box">
-      <div class="About">
-        <h1>About Me</h1>
-        <p>
-            My name is Adelynn, and I grew up in Texas. I am focused on knit design, digital knit programming, and hand flat machines. I love creating texture and design through various gauge knits.
-        </p>
-  
-        <p>
-            I am a collaborative team player experienced in both customer service 
-            and workroom management. I am a skilled multitasker, eager to learn new 
-            proficiencies, punctual, and a self-motivated employee who completes 
-            tasks efficiently without supervision.
-        </p>
-      </div>
+  </div>
+
+  <div class="about-box">
+    <div class="About">
+      <h1>About Me</h1>
+      <p>
+          My name is Adelynn, and I grew up in Texas. I am focused on knit design, digital knit programming, and hand flat machines. I love creating texture and design through various gauge knits.
+      </p>
+
+      <p>
+          I am a collaborative team player experienced in both customer service 
+          and workroom management. I am a skilled multitasker, eager to learn new 
+          proficiencies, punctual, and a self-motivated employee who completes 
+          tasks efficiently without supervision.
+      </p>
     </div>
-  
-  </main>
-  
-  
-  
+  </div>
+
+</main>
 
 </body>
 </html>
