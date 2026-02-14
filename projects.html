@@ -148,11 +148,11 @@ body {
 .viewer-close:hover { color: #69A46A; }
 
 /* ===== MOBILE FIXED SIDEBAR ===== */
+/* ===== MOBILE FIX ===== */
 @media only screen and (max-width: 600px) {
 
-body { 
-    flex-direction: column; 
-    height: auto;
+body {
+    flex-direction: column;
     background-color: #ffffff;
 }
 
@@ -161,7 +161,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: var(--mobile-header-height);
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -174,33 +174,31 @@ body {
 
 .sidebar-logo { margin: 0; width: auto; }
 .sidebar-logo img { max-width: 40px; }
-.sidebar a { 
-    margin: 0; 
-    font-size: 0.8em; 
+
+.sidebar a {
+    margin: 0;
+    font-size: 0.8em;
     padding: 0;
 }
 
-.content { 
-    padding: 1em; 
-    border-radius: 0; 
-    margin-top: 60px;   /* prevents overlap */
+.content {
+    margin-top: var(--mobile-header-height); /* PUSH DOWN */
+    padding: 1em;
 }
 
-.projects-grid { 
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-    gap: 1.5em; 
+.projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5em;
 }
-
-.project-card { height: 320px; }
-.project-card img { height: 260px; }
 
 .viewer .arrow {
-    top: 10%;
-    font-size: 3.5em;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    top: 15%;
+    font-size: 3em;
 }
 
-.viewer img { max-height: 70%; }
+.viewer img {
+    max-height: 75%;
+}
 }
 
 </style>
