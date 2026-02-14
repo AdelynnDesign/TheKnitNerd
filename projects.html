@@ -108,7 +108,7 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 2000;
     animation: fadeIn 0.3s ease;
 }
 @keyframes fadeIn {
@@ -121,7 +121,7 @@ body {
     border-radius: 12px;
 }
 
-/* Grey Arrows */
+/* Arrows */
 .arrow {
     position: absolute;
     top: 50%;
@@ -147,45 +147,65 @@ body {
 }
 .viewer-close:hover { color: #69A46A; }
 
-/* Mobile */
+/* ===== MOBILE FIXED SIDEBAR ===== */
 @media only screen and (max-width: 600px) {
-    body { flex-direction: column; height: auto; }
+
+    body { 
+        flex-direction: column; 
+        height: auto;
+    }
 
     .sidebar {
+        position: fixed;       /* LOCK IT */
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 60px;
         flex-direction: row;
         justify-content: space-around;
-        padding: 0.5em 0;
+        align-items: center;
+        padding: 0;
         border-right: none;
         border-bottom: 2px solid rgba(0,0,0,0.2);
-        border-radius: 0 0 10px 10px;
+        border-radius: 0;
+        z-index: 1500;
     }
-    .sidebar-logo { margin: 0; width: auto; }
-    .sidebar-logo img { max-width: 50px; }
-    .sidebar a { margin: 0; font-size: 0.85em; padding: 0.5em 0.2em; }
 
-    .content { padding: 1em; border-radius: 0; margin-top: 0.5em; }
-    .projects-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5em; }
+    .sidebar-logo { margin: 0; width: auto; }
+    .sidebar-logo img { max-width: 40px; }
+    .sidebar a { 
+        margin: 0; 
+        font-size: 0.8em; 
+        padding: 0;
+    }
+
+    /* Push content down */
+    .content { 
+        padding: 1em; 
+        border-radius: 0; 
+        margin-top: 70px;   /* IMPORTANT */
+    }
+
+    .projects-grid { 
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+        gap: 1.5em; 
+    }
+
     .project-card { height: 320px; }
     .project-card img { height: 260px; }
 
-    /* Move arrows above image on mobile */
+    /* Viewer arrows above image on mobile */
     .viewer .arrow {
-        top: 10%; /* above the image */
+        top: 10%;
         font-size: 3.5em;
-        color: white;
         text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-        padding: 0 0.5em;
     }
-    .viewer .arrow.left { left: 10%; }
-    .viewer .arrow.right { right: 10%; }
-
-    /* Reduce image max-height to leave space for arrows */
     .viewer img { max-height: 70%; }
 }
 </style>
 </head>
 <body>
+
 <nav class="sidebar">
     <div class="sidebar-logo">
         <img src="Images/Logo.png" alt="Logo" />
@@ -265,5 +285,6 @@ document.addEventListener("keydown", e => {
     if (e.key === "Escape") closeViewer();
 });
 </script>
+
 </body>
 </html>
