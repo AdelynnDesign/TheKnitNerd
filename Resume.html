@@ -19,7 +19,6 @@ body {
   background-color: #f5f7f5;
 }
 
-/* Sidebar */
 .sidebar {
   width: 6em;
   background: linear-gradient(to bottom, #69A46A, #4f7a4f); 
@@ -65,7 +64,6 @@ body {
   transform: translateX(3px);                  
 }
 
-/* Content */
 .content {
   flex: 1;
   padding: 2em;               
@@ -76,7 +74,6 @@ body {
   gap: 2em;
 }
 
-/* Resume Box */
 .resume-box {
   background: linear-gradient(to bottom, #69A46A, #4f7a4f);
   padding: 2em;
@@ -95,7 +92,6 @@ body {
   border-radius: 12px;
 }
 
-/* ===== MOBILE FIXED SIDEBAR ===== */
 @media only screen and (max-width: 600px) {
 
   body {
@@ -132,7 +128,7 @@ body {
 
   .content {
     padding: 1em;
-    margin-top: var(--mobile-header-height); /* push content down */
+    margin-top: var(--mobile-header-height); 
     border-radius: 0;
     gap: 10em;
 
@@ -140,7 +136,7 @@ body {
 
   .resume-box {
     max-width: 90%;
-    padding: .65em;
+    padding: 1em;
   }
 }
 

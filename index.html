@@ -14,7 +14,6 @@ body {
   display: flex;
 }
 
-/* Sidebar */
 .sidebar {
   width: 6em;
   background: linear-gradient(to bottom, #69A46A, #4f7a4f);
@@ -58,13 +57,11 @@ body {
   transform: translateX(3px);
 }
 
-/* Content */
 .content {
   flex: 1;
   padding: 2em;
 }
 
-/* Masonry Gallery */
 .display {
   column-count: 4;
   column-gap: 1em;
@@ -79,7 +76,6 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Responsive columns */
 @media only screen and (max-width: 1200px) {
   .display { column-count: 3; }
 }
@@ -90,12 +86,11 @@ body {
   .display { column-count: 1; }
 }
 
-/* ===== MOBILE FIXED HEADER ===== */
 @media only screen and (max-width: 600px) {
 
 body {
   flex-direction: column;
-  background-color: #ffffff;  /* white top */
+  background-color: #ffffff;  
 }
 
 .sidebar {
@@ -126,7 +121,7 @@ body {
 
 .content {
   padding: 1em;
-  margin-top: 60px;   /* prevent overlap */
+  margin-top: 60px;   
 }
 
 }

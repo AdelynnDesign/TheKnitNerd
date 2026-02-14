@@ -14,7 +14,6 @@ body {
     background-color: #f5f7f5;
 }
 
-/* Sidebar */
 .sidebar-logo {
     margin-bottom: 1em;
     width: 100%;
@@ -55,7 +54,6 @@ body {
     transform: translateX(3px);
 }
 
-/* Content */
 .content {
     flex: 1;
     padding: 2em;
@@ -66,14 +64,12 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* Bigger Project Grid */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 2.5em;
 }
 
-/* Bigger Cards */
 .project-card {
     background: white;
     border-radius: 14px;
@@ -99,7 +95,6 @@ body {
     text-align: center;
 }
 
-/* Viewer Overlay */
 .viewer {
     position: fixed;
     inset: 0;
@@ -121,7 +116,6 @@ body {
     border-radius: 12px;
 }
 
-/* Arrows */
 .arrow {
     position: absolute;
     top: 50%;
@@ -147,7 +141,6 @@ body {
 }
 .viewer-close:hover { color: #69A46A; }
 
-/* ===== MOBILE FIXED SIDEBAR ===== */
 @media only screen and (max-width: 600px) {
 
 body { 
@@ -170,6 +163,7 @@ body {
     border-bottom: 2px solid rgba(0,0,0,0.2);
     border-radius: 0;
     z-index: 1000;
+    
 }
 
 .sidebar-logo { margin: 0; width: auto; }
@@ -183,7 +177,7 @@ body {
 .content { 
     padding: 1em; 
     border-radius: 0; 
-    margin-top: 60px;   /* prevents overlap */
+    margin-top: 60px;   
 }
 
 .projects-grid { 

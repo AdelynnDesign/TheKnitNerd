@@ -16,7 +16,6 @@ body {
   background-color: #f5f7f5;
 }
 
-/* Sidebar */
 .sidebar-logo {
   margin-bottom: 1em;      
   width: 100%;
@@ -61,7 +60,6 @@ body {
   transform: translateX(3px);
 }
 
-/* Content */
 .content {
   flex: 1;
   padding: 2em;
@@ -72,7 +70,6 @@ body {
   flex-wrap: wrap; 
 }
 
-/* Contact Form */
 #contact {
   background: #ffffff;
   padding: 2em;
@@ -142,7 +139,6 @@ body {
   transform: translateY(-1px);
 }
 
-/* QR Box */
 .qr-box {
   background: linear-gradient(to bottom, #69A46A, #4f7a4f);
   padding: 2em;
@@ -151,18 +147,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 480px; /* match contact form width */
+  max-width: 480px; 
   width: 100%;
   margin-top: 2em;
 }
 
 .qr-box img {
-  width: 100%;  /* fill the container */
+  width: 100%;  
   height: auto;
   border-radius: 12px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 900px) {
   .content {
     flex-direction: column;
@@ -178,7 +173,7 @@ body {
 }
 
 .sidebar {
-  position: fixed;           /* fixed at top on mobile */
+  position: fixed;           
   top: 0;
   left: 0;
   width: 100%;
@@ -187,7 +182,7 @@ body {
   padding: 0;
   border-right: none;
   border-bottom: 2px solid rgba(0,0,0,0.2);
-  border-radius: 0 0 10px 10px;
+  border-radius: 0;
   background: linear-gradient(to bottom, #69A46A, #4f7a4f);
   z-index: 1000;
 }
@@ -204,24 +199,23 @@ body {
 .sidebar a {
   margin: 0;
   font-size: 0.85em;
-  padding: 0.65em;
+  padding: 0.45em;
 }
 
 .content {
-  padding: .65em;
+  padding: -.45em;
   border-radius: 0;
-  margin-top: 60px; /* prevents overlap with fixed top bar */
+  margin-top: 25px; 
 }
 
 #contact {
-  padding: .65em;
-  max-width: 90%;
-  width: 100%;
+  padding: -.45em;
+  max-width: 80%;
 }
 
 .qr-box {
   max-width: 90%;
-  padding: .80em;
+  padding: .95em;
 }
 }
 
@@ -247,7 +241,6 @@ body {
 <main class="content">
 
   <div class="qr-box">
-  <!-- Contact Form -->
   <section id="contact">
     <h2>Contact Me</h2>
     <form action="https://formspree.io/f/mnjjqbar" method="POST">
@@ -282,7 +275,6 @@ body {
   </section>
 </div>
 
-  <!-- QR Code -->
   <div class="qr-box">
     <img src="Images/QR.png" alt="Contact QR">
   </div>

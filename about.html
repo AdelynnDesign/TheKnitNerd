@@ -19,7 +19,6 @@ body {
   background-color: #f5f7f5;
 }
 
-/* Sidebar */
 .sidebar {
   width: 6em;
   background: linear-gradient(to bottom, #69A46A, #4f7a4f);
@@ -65,7 +64,6 @@ body {
   transform: translateX(3px);                  
 }
 
-/* Content */
 .content {
   flex: 1;
   padding: 2em;
@@ -76,7 +74,6 @@ body {
   flex-wrap: wrap; 
 }
 
-/* Boxes */
 .image-box,
 .about-box {
   background: linear-gradient(to bottom, #69A46A, #4f7a4f);
@@ -110,7 +107,6 @@ body {
   line-height: 1.6;
 }
 
-/* ===== MOBILE FIXED SIDEBAR ===== */
 @media only screen and (max-width: 600px) {
 
   body {
@@ -146,7 +142,7 @@ body {
 
   .content {
     padding: 1em;
-    margin-top: var(--mobile-header-height); /* push content down */
+    margin-top: var(--mobile-header-height); 
     border-radius: 0;
     gap: 1.5em;
   }
@@ -154,7 +150,7 @@ body {
   .image-box,
   .about-box {
     max-width: 90%;
-    padding: .65em;
+    padding: 1em;
   }
 }
   </style>
