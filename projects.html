@@ -214,27 +214,35 @@ body {
 
 <main class="content">
     <div class="projects-grid">
+
+        <!-- Barn Swallow (NOW FIRST) -->
         <div class="project-card" onclick="openProject(0)">
-            <img src="Images/page1.png">
-            <h3>Zankov</h3>
-        </div>
-        <div class="project-card" onclick="openProject(1)">
-            <img src="Images/proj2page1.png">
-            <h3>Don't Stray</h3>
-        </div>
-        <div class="project-card" onclick="openProject(2)">
-            <img src="Images/proj3page1.png">
-            <h3>Plumeria</h3>
-        </div>
-        <div class="project-card" onclick="openProject(3)">
-            <img src="Images/proj4page1.png">
-            <h3>Austria</h3>
-        </div>
-        <div class="project-card" onclick="openProject(4)">
             <img src="Images/proj5page1.png">
             <h3>Barn Swallow</h3>
         </div>
+    
+        <div class="project-card" onclick="openProject(1)">
+            <img src="Images/page1.png">
+            <h3>Zankov</h3>
+        </div>
+    
+        <div class="project-card" onclick="openProject(2)">
+            <img src="Images/proj2page1.png">
+            <h3>Don't Stray</h3>
+        </div>
+    
+        <div class="project-card" onclick="openProject(3)">
+            <img src="Images/proj3page1.png">
+            <h3>Plumeria</h3>
+        </div>
+    
+        <div class="project-card" onclick="openProject(4)">
+            <img src="Images/proj4page1.png">
+            <h3>Austria</h3>
+        </div>
+    
     </div>
+    
 </main>
 
 <div class="viewer" id="viewer">
@@ -246,13 +254,24 @@ body {
 
 <script>
 const projects = [
-    ["Images/proj1page3.png","Images/proj1page4.png","Images/proj1page1.png","Images/proj1page2.png","Images/proj1page5.png","Images/proj1page6.png","Images/proj1page7.png","Images/proj1page8.png"],
-    ["Images/proj2page1.png","Images/proj2page2.png","Images/proj2page3.png","Images/proj2page4.png","Images/proj2page5.png","Images/proj2page6.png"],
-    ["Images/proj3page1.png","Images/proj3page2.png","Images/proj3page3.png"],
-    ["Images/proj4page1.png","Images/proj4page2.png","Images/proj4page3.png","Images/proj4page4.png"],
-    ["Images/proj5page1.png","Images/proj5page2.png","Images/proj5page3.png","Images/proj5page4.png","Images/proj5page5.png","Images/proj5page6.png"],
+
+// Barn Swallow (NOW INDEX 0)
+["Images/proj5page1.png","Images/proj5page2.png","Images/proj5page3.png","Images/proj5page4.png","Images/proj5page5.png","Images/proj5page6.png"],
+
+// Zankov
+["Images/proj1page3.png","Images/proj1page4.png","Images/proj1page1.png","Images/proj1page2.png","Images/proj1page5.png","Images/proj1page6.png","Images/proj1page7.png","Images/proj1page8.png"],
+
+// Don't Stray
+["Images/proj2page1.png","Images/proj2page2.png","Images/proj2page3.png","Images/proj2page4.png","Images/proj2page5.png","Images/proj2page6.png"],
+
+// Plumeria
+["Images/proj3page1.png","Images/proj3page2.png","Images/proj3page3.png"],
+
+// Austria
+["Images/proj4page1.png","Images/proj4page2.png","Images/proj4page3.png","Images/proj4page4.png"],
 
 ];
+
 
 let currentProject = 0;
 let currentImage = 0;
