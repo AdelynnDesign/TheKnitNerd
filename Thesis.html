@@ -165,17 +165,19 @@ body {
     overflow: hidden;
 }
 
-.content2 img {
-    width: 50%;
-    height: 100%;      /* 🔥 key change */
-    object-fit: cover; /* fills nicely */
+.content2 {
+    display: flex;
+    height: 800px;
+    overflow: hidden;
+    width: 100%;
 }
 
-
+/* 🔥 key fix: equal flexible columns */
 .img-box {
-    position: relative;
-    width: 50%;
+    flex: 1;              /* makes both always equal */
+    min-width: 0;         /* prevents overflow breaking 50/50 */
     height: 100%;
+    position: relative;
 }
 
 .img-box img {
@@ -183,6 +185,7 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
 
 /* 🔹 Blur effect */
 .img-box.blur img {
@@ -207,6 +210,18 @@ body {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+@media (max-width: 600px) {
+  .content2 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .img-box {
+    height: 300px;
+  }
+}
+
 
 
 
