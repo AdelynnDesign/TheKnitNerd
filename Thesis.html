@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact | My Portfolio</title>
+  <title>Thesis | My Portfolio</title>
   <link rel="icon" type="image/png" href="Images/Logo2.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -212,15 +212,22 @@ body {
 }
 
 @media (max-width: 600px) {
-  .content2 {
-    flex-direction: column;
-    height: auto;
-  }
 
-  .img-box {
-    height: 300px;
-  }
+body {
+  flex-direction: column;
 }
+
+.content2 {
+  flex-direction: column;
+  height: auto;
+  margin-top: var(--mobile-header-height); /* 🔥 key fix */
+}
+
+.img-box {
+  height: 500px;
+}
+}
+
 
 
 
