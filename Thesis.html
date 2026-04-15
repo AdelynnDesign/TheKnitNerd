@@ -74,7 +74,6 @@ body {
   background: #ffffff;
   padding: 2em;
   max-width: 480px;
-  max-height: 480p;
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
@@ -153,15 +152,63 @@ body {
   margin-top: 2em;
 }
 
-.qr-box2 {
-  margin-top: 6em; 
-}
-
 .qr-box img {
   width: 100%;  
   height: auto;
   border-radius: 12px;
 }
+
+
+.content2 {
+    display: flex;
+    height: 800px;
+    overflow: hidden;
+}
+
+.content2 img {
+    width: 50%;
+    height: 100%;      /* 🔥 key change */
+    object-fit: cover; /* fills nicely */
+}
+
+
+.img-box {
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 🔹 Blur effect */
+.img-box.blur img {
+    filter: blur(6px);
+}
+
+/* 🔹 Coming Soon overlay */
+.img-box.coming-soon .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
 
 @media (max-width: 900px) {
   .content {
@@ -244,48 +291,18 @@ body {
 
 </nav>
 
-<main class="content">
+<main class="content2">
+    <div class="img-box blur">
+        <img src="Images/teaser3.png" loading="lazy" alt="">
+    </div>
 
-  <div class="qr-box">
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/mnjjqbar" method="POST">
-
-      <label>
-        First Name
-        <input type="text" name="first_name" required>
-      </label>
-
-      <label>
-        Last Name
-        <input type="text" name="last_name" required>
-      </label>
-
-      <label>
-        Email
-        <input type="email" name="email" required>
-      </label>
-
-      <label>
-        Phone Number
-        <input type="tel" name="phone">
-      </label>
-
-      <label>
-        Message
-        <textarea name="message" rows="5" required></textarea>
-      </label>
-
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-</div>
-
-<div class="qr-box qr-box2">
-  <img src="Images/QR.png" alt="Contact QR">
-  </div>
-
+    <div class="img-box coming-soon">
+        <img src="Images/teaser2.png" loading="lazy" alt="">
+        <div class="overlay">Coming Soon</div>
+    </div>
 </main>
+
+
 
 </body>
 </html>
