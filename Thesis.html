@@ -161,18 +161,11 @@ body {
 
 .content2 {
     display: flex;
-    height: 800px;
-    overflow: hidden;
-}
-
-.content2 {
-    display: flex;
-    height: 800px;
+    height: 100vh;      /* 🔥 fills full screen height */
     overflow: hidden;
     width: 100%;
 }
 
-/* 🔥 key fix: equal flexible columns */
 .img-box {
     flex: 1;              /* makes both always equal */
     min-width: 0;         /* prevents overflow breaking 50/50 */
